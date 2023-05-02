@@ -61,7 +61,7 @@ defmodule ExAws.CloudWatchLogs do
   * `destination` - (string) the name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region
 
   ### Options
-  * `task_name - (string) the name of the export task
+  * `task_name` - (string) the name of the export task
   * `log_stream_name_prefix` - (string) export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied
   * `destination_prefix` - (string) the prefix used as the start of the key for every object exported. If you don't specify a value, the default is `exportedlogs`
 
@@ -379,7 +379,7 @@ defmodule ExAws.CloudWatchLogs do
   ### Options
   * `log_group_name` - (string) the name of the log group
   * `status` - (string) limits the returned queries to only those that have the specified status. Valid values are `Cancelled`, `Complete`, `Failed`, `Running`, and `Scheduled`.
-  * `max_results - (string) imits the number of returned queries to the specified number.
+  * `max_results` - (string) imits the number of returned queries to the specified number.
   * `next_token` - (string) the token for the next set of items to return (received from previous call)
 
   See [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries)
