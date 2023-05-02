@@ -1,8 +1,8 @@
 defmodule ExAws.CloudWatchLogs.Mixfile do
   use Mix.Project
 
-  @version "1.0.0"
-  @url_github "https://github.com/goUnDigital/ex_aws_cloudwatch_logs"
+  @version "1.0.1"
+  @url_github "https://github.com/davemuirhead/ex_aws_cloudwatch_logs"
 
   def project do
     [
@@ -16,17 +16,17 @@ defmodule ExAws.CloudWatchLogs.Mixfile do
           "mix.exs",
           "README*"
         ],
-        licenses: [ "MIT" ],
+        licenses: ["MIT"],
         links: %{
-          #"Docs" => @url_docs,
+          # "Docs" => @url_docs,
           github: @url_github
         },
         maintainers: ["Dave Muirhead"]
       },
       version: @version,
       elixir: "~> 1.5",
-      elixirc_paths: elixirc_paths(Mix.env),
-      start_permanent: Mix.env == :prod,
+      elixirc_paths: elixirc_paths(Mix.env()),
+      start_permanent: Mix.env() == :prod,
       deps: deps(),
       source_url: @url_github,
       homepage_url: @url_github
@@ -34,7 +34,7 @@ defmodule ExAws.CloudWatchLogs.Mixfile do
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_),     do: ["lib",]
+  defp elixirc_paths(_), do: ["lib"]
 
   # Run "mix help compile.app" to learn about applications.
   def application do
@@ -51,7 +51,7 @@ defmodule ExAws.CloudWatchLogs.Mixfile do
       {:sweet_xml, ">= 0.0.0", only: [:dev, :test]},
       {:jason, ">= 0.0.0", only: [:dev, :test]},
       {:inflex, "~> 2.1"},
-      ex_aws(),
+      ex_aws()
     ]
   end
 
